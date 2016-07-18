@@ -19,9 +19,16 @@ As a result of Gulp itself has a few functions to help you build files or tests.
 
 ## Installation
 
-1 Install NodeJS
-2 Run `npm install gulp -g`
-3 Run `gulp -vgulp -v`
+1. Install NodeJS
+2. Run `npm install gulp -g`
+3. Run:
+
+```
+#!javascript
+
+gulp -v
+```
+
 
 ## Gulpfile (gulpfile.js)
 Gulpfile is the entry point that will be find when executing the commands `gulp nameTask`. A particular example is a task runner is siminar a factory, you know inputs, process, stock and what they will become at the end. In sum up, you will code a master plan.
