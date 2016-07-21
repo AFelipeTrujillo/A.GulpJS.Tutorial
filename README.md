@@ -8,4 +8,7 @@
 #!unix
 
 git clone https://andresfelipetrujillo.com/2016/07/21/a-gulpjs-tutorial-with-example-and-repo-to-test
+cd a.gulpjs.tutorial
+npm install
+gulp
 ```
