@@ -26,7 +26,7 @@ gulp.task('styles',function(){
 
 gulp.task('js',function(){
 	gulp.src('src/scripts/*.js')
-	.pipe(concat('script.js'))
+	.pipe(concat('scripts.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('build/scripts/'));
 });
