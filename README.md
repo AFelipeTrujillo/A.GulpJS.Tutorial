@@ -118,3 +118,24 @@ gulp.task('default',['imagemin','styles'],function(){
 });
 
 `
+
+### Live Reload
+
+If we want to detect changes in source code or running test automatically, the Browser Sync is proper plugin which you will need. It is simple, you only need create a instace on top of file (callings required files) with method *create()*. Then, invoke the *change* event via *on()* method and assing *reload* function.
+
+```
+gulp.watch('src/styles/*.css',['styles']).on('change',browserSync.reload);
+```
+
+Browser Sync has incorporate a simple server which you should assign the path destination.
+
+```
+gulp.task('browserSync',function(){
+        browserSync.init({
+                server : {
+                        baseDir: 'build'
+                }
+        });
+});
+
+```
