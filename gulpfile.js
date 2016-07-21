@@ -4,6 +4,7 @@ var autoprefix = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
+var uglify = require('gulp-uglify');
 
 //Minify images process
 gulp.task('imagemin',function(){
@@ -23,13 +24,22 @@ gulp.task('styles',function(){
 	.pipe(gulp.dest('build/styles/'));
 });
 
-gulp.task('default',['browserSync','imagemin','styles'],function(){
+gulp.task('js',function(){
+	gulp.src('src/scripts/*.js')
+	.pipe(concat('script.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('build/scripts/'));
+});
+
+gulp.task('default',['browserSync','imagemin','styles','js'],function(){
 
 	gulp.watch('src/styles/*.css',['styles']).on('change',browserSync.reload);
 
 	gulp.watch('src/images/**/*',['imagemin']).on('change',browserSync.reload);
 
 	gulp.watch('build/*.html').on('change', browserSync.reload);
+
+	gulp.watch('src/scripts/**/*.js',['js']).on('change',browserSync.reload);
 
 });
 

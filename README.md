@@ -139,3 +139,31 @@ gulp.task('browserSync',function(){
 });
 
 ```
+
+### Optimizing CSS and JS
+
+To understand the optimization of CSS and JS files. We are going to use two plugins called *gulp-minify-css*, *gulp-concat* and *gulp-uglify*. The first two mentioned preciously. To install new one you need to run:
+```
+npm install --save-dev gulp-uglify
+```
+
+Add dependencie:
+```
+ var uglify = require('gulp-uglify');
+```
+
+Task description:
+```
+gulp.task('js',function(){
+         gulp.src('src/scripts/*.js')
+        .pipe(concat('script.js'))
+ 	.pipe(uglify())
+	.pipe(gulp.dest('build/scripts/'));
+});
+
+```
+
+Watch description:
+```
+gulp.watch('src/scripts/**/*.js',['js']).on('change',browserSync.reload);
+```
