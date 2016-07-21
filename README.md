@@ -8,8 +8,6 @@ Gulp is a build system which allows automating task in common developing task, s
 
 
 ```
-#!unix
-
 git clone https://github.com/AFelipeTrujillo/A.GulpJS.Tutorial.git
 cd a.gulpjs.tutorial
 npm install
