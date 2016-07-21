@@ -6,7 +6,6 @@ var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var uglify = require('gulp-uglify');
 
-//Minify images process
 gulp.task('imagemin',function(){
 
 	gulp.src('src/images/**/*')
