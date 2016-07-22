@@ -10,8 +10,7 @@ gulp.task('imagemin',function(){
 
 	gulp.src('src/images/**/*')
 	.pipe(imagemin())
-	.pipe(gulp.dest('build/images'))
-	.pipe(browserSync.stream());
+	.pipe(gulp.dest('build/images'));
 
 });
 
