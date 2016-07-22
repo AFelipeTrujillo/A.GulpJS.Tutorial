@@ -14,4 +14,27 @@ npm install
 gulp
 ```
 
-Happy Coding :)
+## Docker ##
+
+Finally, I created a docker container with the basic configuration for gulp. Next, I am going to show you the Dockerfile and how you can run it.
+
+**Dockerfile**
+```
+FROM node:argon
+RUN mkdir -p /usr/app
+COPY package.json /usr/app
+COPY gulpfile.js /usr/app
+WORKDIR /usr/app
+RUN npm install gulp -g
+RUN npm install
+EXPOSE 8080
+CMD ["gulp"]
+```
+
+On repositorie folder, run:
+```
+docker build -t {{your-tag}}/gulp .
+docker run -it -v /{{your-absolute-path}}/src:/usr/app/src -v /{{your-absolute-path}}/build:/usr/app/build {{your-tag}}/gulp
+```
+
+Cheers !! :beer: 
